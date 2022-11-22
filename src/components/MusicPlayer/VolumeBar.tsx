@@ -5,7 +5,21 @@ import {
 	BsFillVolumeMuteFill,
 } from 'react-icons/bs';
 
-const VolumeBar = ({ value, min, max, onChange, setVolume }) => (
+interface VolumeBarProps {
+	value: number;
+	min: number;
+	max: number;
+	onChange: () => void;
+	setVolume: () => void;
+}
+
+const VolumeBar = ({
+	value,
+	min,
+	max,
+	onChange,
+	setVolume,
+}: VolumeBarProps) => (
 	<div className="hidden lg:flex flex-1 items-center justify-end">
 		{value <= 1 && value > 0.5 && (
 			<BsFillVolumeUpFill size={25} color="#FFF" onClick={() => setVolume(0)} />
@@ -21,6 +35,7 @@ const VolumeBar = ({ value, min, max, onChange, setVolume }) => (
 			/>
 		)}
 		<input
+			title="play"
 			type="range"
 			step="any"
 			value={value}
