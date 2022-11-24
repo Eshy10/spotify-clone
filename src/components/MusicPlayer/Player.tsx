@@ -22,22 +22,26 @@ const Player = ({
 	onLoadedData,
 	repeat,
 }: PlayerProps) => {
-	const ref = useRef(null);
+	const ref = useRef<HTMLAudioElement>(null);
 	// eslint-disable-next-line no-unused-expressions
-	if (ref.current !== undefined) {
+	if (ref.current !== null) {
 		if (isPlaying) {
-			ref.current.play();
+			void ref.current.play();
 		} else {
 			ref.current.pause();
 		}
 	}
 
 	useEffect(() => {
-		ref.current.volume = volume;
+		if (ref.current !== null) {
+			ref.current.volume = volume;
+		}
 	}, [volume]);
 	// updates audio element only on seekTime change (and not on each rerender):
 	useEffect(() => {
-		ref.current.currentTime = seekTime;
+		if (ref.current !== null) {
+			ref.current.currentTime = seekTime;
+		}
 	}, [seekTime]);
 
 	return (

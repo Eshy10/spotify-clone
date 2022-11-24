@@ -7,8 +7,8 @@ import {
 
 interface VolumeBarProps {
 	value: number;
-	min: number;
-	max: number;
+	min: string;
+	max: string;
 	onChange: () => void;
 	setVolume: (val: number) => void;
 }

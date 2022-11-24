@@ -1,6 +1,6 @@
 interface SeekBarProps {
 	value: number;
-	min: number;
+	min: string;
 	max: number;
 	onInput: () => void;
 	setSeekTime: (val: number) => void;

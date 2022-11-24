@@ -9,7 +9,8 @@ import {
 
 interface ControlProps {
 	isPlaying: boolean;
-	activeSong: any;
+	activeSong?: any;
+	isActive?: boolean;
 	repeat: boolean;
 	shuffle: boolean;
 	currentSongs: string;
