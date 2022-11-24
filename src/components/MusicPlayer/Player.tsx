@@ -1,5 +1,16 @@
-/* eslint-disable jsx-a11y/media-has-caption */
 import React, { useRef, useEffect } from 'react';
+
+interface PlayerProps {
+	artistId: string;
+	isPlaying: boolean;
+	activeSong: any;
+	repeat: boolean;
+	seekTime: any;
+	volume: any;
+	onEnded: () => void;
+	onLoadedData: () => void;
+	onTimeUpdate: () => void;
+}
 
 const Player = ({
 	activeSong,
@@ -10,10 +21,10 @@ const Player = ({
 	onTimeUpdate,
 	onLoadedData,
 	repeat,
-}) => {
+}: PlayerProps) => {
 	const ref = useRef(null);
 	// eslint-disable-next-line no-unused-expressions
-	if (ref.current) {
+	if (ref.current !== undefined) {
 		if (isPlaying) {
 			ref.current.play();
 		} else {

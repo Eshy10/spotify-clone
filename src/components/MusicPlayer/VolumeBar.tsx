@@ -10,7 +10,7 @@ interface VolumeBarProps {
 	min: number;
 	max: number;
 	onChange: () => void;
-	setVolume: () => void;
+	setVolume: (val: number) => void;
 }
 
 const VolumeBar = ({

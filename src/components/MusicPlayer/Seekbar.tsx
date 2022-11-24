@@ -1,8 +1,22 @@
-import React from 'react';
+interface SeekBarProps {
+	value: number;
+	min: number;
+	max: number;
+	onInput: () => void;
+	setSeekTime: (val: number) => void;
+	appTime: number;
+}
 
-const Seekbar = ({ value, min, max, onInput, setSeekTime, appTime }) => {
+const Seekbar = ({
+	value,
+	min,
+	max,
+	onInput,
+	setSeekTime,
+	appTime,
+}: SeekBarProps) => {
 	// converts the time to format 0:00
-	const getTime = (time) =>
+	const getTime = (time: number) =>
 		`${Math.floor(time / 60)}:${`0${Math.floor(time % 60)}`.slice(-2)}`;
 
 	return (
@@ -16,6 +30,7 @@ const Seekbar = ({ value, min, max, onInput, setSeekTime, appTime }) => {
 			</button>
 			<p className="text-white">{value === 0 ? '0:00' : getTime(value)}</p>
 			<input
+				title="play"
 				type="range"
 				step="any"
 				value={value}
