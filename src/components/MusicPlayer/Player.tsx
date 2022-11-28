@@ -8,8 +8,8 @@ interface PlayerProps {
 	seekTime: any;
 	volume: any;
 	onEnded: () => void;
-	onLoadedData: () => void;
-	onTimeUpdate: () => void;
+	onLoadedData: () => React.Dispatch<React.SetStateAction<number>>;
+	onTimeUpdate: () => React.Dispatch<React.SetStateAction<number>>;
 }
 
 const Player = ({

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useAppSelector, useAppDispatch } from '../../redux/hook';
 
 import {
 	nextSong,
@@ -14,23 +14,23 @@ import VolumeBar from './VolumeBar';
 
 const MusicPlayer = () => {
 	const { activeSong, currentSongs, currentIndex, isActive, isPlaying } =
-		useSelector((state: any) => state.player);
+		useAppSelector((state: any) => state.player);
 	const [duration, setDuration] = useState(0);
 	const [seekTime, setSeekTime] = useState(0);
 	const [appTime, setAppTime] = useState(0);
 	const [volume, setVolume] = useState(0.3);
 	const [repeat, setRepeat] = useState(false);
 	const [shuffle, setShuffle] = useState(false);
-	const dispatch = useDispatch();
+	const dispatch = useAppDispatch();
 
 	useEffect(() => {
 		if (currentSongs.length !== '') dispatch(playPause(true));
 	}, [currentIndex]);
 
 	const handlePlayPause = () => {
-		if (!isActive) return;
+		if (isActive === undefined) return;
 
-		if (isPlaying) {
+		if (isPlaying !== undefined) {
 			dispatch(playPause(false));
 		} else {
 			dispatch(playPause(true));
