@@ -9,7 +9,7 @@ interface VolumeBarProps {
 	value: number;
 	min: string;
 	max: string;
-	onChange: () => void;
+	onChange: any;
 	setVolume: (val: number) => void;
 }
 

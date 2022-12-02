@@ -101,7 +101,9 @@ const MusicPlayer = () => {
 				value={volume}
 				min="0"
 				max="1"
-				onChange={(event: any) => setVolume(event.target.value)}
+				onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+					setVolume(Number(event.target.value))
+				}
 				setVolume={setVolume}
 			/>
 		</div>

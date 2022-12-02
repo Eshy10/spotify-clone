@@ -1,15 +1,16 @@
 import React, { useRef, useEffect } from 'react';
 
 interface PlayerProps {
-	artistId: string;
+	artistId?: string;
 	isPlaying: boolean;
 	activeSong: any;
 	repeat: boolean;
 	seekTime: any;
 	volume: any;
 	onEnded: () => void;
-	onLoadedData: () => React.Dispatch<React.SetStateAction<number>>;
-	onTimeUpdate: () => React.Dispatch<React.SetStateAction<number>>;
+	onLoadedData: any;
+	onTimeUpdate: any;
+	currentIndex?: number;
 }
 
 const Player = ({
