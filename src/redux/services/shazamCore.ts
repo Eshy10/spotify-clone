@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-invalid-void-type */
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import type { WorldChart, TracksList } from './types';
+import type { WorldChart, TracksList, Artist } from './types';
 
 // Define a service using a base URL and expected endpoints
 export const shazamCoreApi = createApi({
@@ -29,6 +29,9 @@ export const shazamCoreApi = createApi({
 		getSongsBySearch: builder.query<TracksList[], string>({
 			query: (searchTerm) =>
 				`/search/multi?search_type=SONGS_ARTISTS&query=${searchTerm}`,
+		}),
+		getArtistDetails: builder.query<Artist[], string>({
+			query: (artistId) => `/artists/details?artist_id=${artistId}`,
 		}),
 	}),
 });
