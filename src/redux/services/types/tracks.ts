@@ -1,4 +1,33 @@
-export interface worldChart {
+export interface TracksList {
+	tracks: Tracks;
+	artists: Artists;
+}
+
+interface Artists {
+	hits: Hit2[];
+}
+
+interface Hit2 {
+	artist: Artist2;
+}
+
+interface Artist2 {
+	avatar?: string;
+	name: string;
+	verified: boolean;
+	weburl: string;
+	adamid: string;
+}
+
+interface Tracks {
+	hits: Hit[];
+}
+
+interface Hit {
+	track: Track;
+}
+
+interface Track {
 	layout: string;
 	type: string;
 	key: string;
@@ -9,14 +38,9 @@ export interface worldChart {
 	hub: Hub;
 	artists: Artist[];
 	url: string;
-	highlightsurls: {};
-	properties: {};
 }
 
-// interface Highlightsurls {}
-
 interface Artist {
-	alias: string;
 	id: string;
 	adamid: string;
 }
@@ -24,10 +48,29 @@ interface Artist {
 interface Hub {
 	type: string;
 	image: string;
-	actions?: Action[];
+	actions: Action[];
 	options: Option[];
+	providers: Provider[];
 	explicit: boolean;
 	displayname: string;
+}
+
+interface Provider {
+	caption: string;
+	images: Images2;
+	actions: Action3[];
+	type: string;
+}
+
+interface Action3 {
+	name: string;
+	type: string;
+	uri: string;
+}
+
+interface Images2 {
+	overflow: string;
+	default: string;
 }
 
 interface Option {
@@ -51,6 +94,7 @@ interface Action2 {
 	name: string;
 	type: string;
 	uri: string;
+	id?: string;
 }
 
 interface Action {
@@ -64,7 +108,7 @@ interface Images {
 	background: string;
 	coverart: string;
 	coverarthq: string;
-	joecolor?: string;
+	joecolor: string;
 }
 
 interface Share {
@@ -74,6 +118,6 @@ interface Share {
 	image: string;
 	twitter: string;
 	html: string;
-	avatar?: string;
+	avatar: string;
 	snapchat: string;
 }
