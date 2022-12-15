@@ -3,14 +3,14 @@ import { useDispatch } from 'react-redux';
 
 import PlayPause from './PlayPause';
 import { playPause, setActiveSong } from '../redux/features/playerSlice';
-import { Song } from '../redux/services/types/song';
+import { WorldChart } from '../redux/services/types/world';
 
 interface SongCardProps {
-	song: Song;
+	song: WorldChart;
 	isPlaying: boolean;
-	activeSong: Song;
+	activeSong: WorldChart;
 	data: any;
-	i: any;
+	i: number;
 }
 
 const SongCard = ({ song, isPlaying, activeSong, data, i }: SongCardProps) => {

@@ -44,4 +44,12 @@ export const shazamCoreApi = createApi({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetTopChartsQuery } = shazamCoreApi;
+export const {
+	useGetTopChartsQuery,
+	useGetArtistDetailsQuery,
+	useGetSongDetailsQuery,
+	useGetSongsByGenreQuery,
+	useGetSongsByCountryQuery,
+	useGetSongRelatedQuery,
+	useGetSongsBySearchQuery,
+} = shazamCoreApi;
