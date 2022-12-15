@@ -6,7 +6,7 @@ interface RelatedSongsProps {
 	artistId: string;
 	isPlaying: boolean;
 	activeSong: any;
-	song: any;
+	song?: any;
 	handlePauseClick: () => void;
 	handlePlayClick: (song: any, i: number) => void;
 }

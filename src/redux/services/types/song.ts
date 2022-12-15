@@ -40,6 +40,7 @@ interface Section {
 	metapages?: Metapage[];
 	tabname: string;
 	metadata?: Metadatum[];
+	text: string[];
 }
 
 interface Metadatum {

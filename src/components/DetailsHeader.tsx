@@ -4,7 +4,7 @@ import { Song } from '../redux/services/types/song';
 
 interface DetailsHeaderProps {
 	artistId: string;
-	artistData: any;
+	artistData?: any;
 	songData: Song;
 }
 
