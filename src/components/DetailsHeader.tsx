@@ -5,7 +5,7 @@ import { Song } from '../redux/services/types/song';
 interface DetailsHeaderProps {
 	artistId: string;
 	artistData?: any;
-	songData: Song;
+	songData?: Song;
 }
 
 const DetailsHeader = ({
@@ -35,7 +35,7 @@ const DetailsHeader = ({
 						? artistData?.artists[artistId].attributes?.name
 						: songData?.title}
 				</p>
-				{artistId === '' && (
+				{artistId === '' && songData !== undefined && (
 					<Link to={`/artists/${songData?.artists[0]?.adamid}`}>
 						<p className="text-base text-gray-400 mt-2">{songData?.subtitle}</p>
 					</Link>

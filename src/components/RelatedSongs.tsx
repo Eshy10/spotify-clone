@@ -7,8 +7,8 @@ interface RelatedSongsProps {
 	isPlaying: boolean;
 	activeSong: any;
 	song?: any;
-	handlePauseClick: () => void;
-	handlePlayClick: (song: any, i: number) => void;
+	handlePauseClick?: any;
+	handlePlayClick?: any;
 }
 
 const RelatedSongs = ({
