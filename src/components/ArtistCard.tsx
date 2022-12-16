@@ -1,9 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Song } from '../redux/services/types/song';
+import { WorldChart } from '../redux/services/types/world';
 
 interface ArtistCardProps {
-	track: Song;
+	track: WorldChart;
 }
 
 const ArtistCard = ({ track }: ArtistCardProps) => {
