@@ -9,14 +9,14 @@ export interface WorldChart {
 	hub: Hub;
 	artists: Artist[];
 	url: string;
-	highlightsurls: {};
-	properties: {};
+	highlightsurls?: {};
+	properties?: {};
 }
 
 // interface Highlightsurls {}
 
 interface Artist {
-	alias: string;
+	alias?: string;
 	id: string;
 	adamid: string;
 }

@@ -26,7 +26,7 @@ export const shazamCoreApi = createApi({
 		getSongsByCountry: builder.query<WorldChart[], string>({
 			query: (countryCode) => `/charts/country?country_code=${countryCode}`,
 		}),
-		getSongsBySearch: builder.query<TracksList[], string>({
+		getSongsBySearch: builder.query<TracksList, string>({
 			query: (searchTerm) =>
 				`/search/multi?search_type=SONGS_ARTISTS&query=${searchTerm}`,
 		}),
