@@ -24,7 +24,9 @@ const ArtistDetails = () => {
 
 	return (
 		<div className="flex flex-col">
-			<DetailsHeader artistId={artistId} artistData={artistData} />
+			{artistData?.data.map((artist, i) => (
+				<DetailsHeader artistId={artistId} artistData={artist} key={i} />
+			))}
 
 			<RelatedSongs
 				data={artistData?.data}
