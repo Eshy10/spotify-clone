@@ -1,9 +1,11 @@
+import { FaPauseCircle, FaPlayCircle } from 'react-icons/fa';
+
 interface SongBarProps {
 	isPlaying: boolean;
 	activeSong: any;
 	song: any;
 	handlePause: () => void;
-	handlePlay: (song: any, i: number) => void;
+	handlePlay: () => void;
 }
 
 const PlayPause = ({
@@ -12,6 +14,11 @@ const PlayPause = ({
 	activeSong,
 	handlePause,
 	handlePlay,
-}: SongBarProps) => <div>Loader</div>;
+}: SongBarProps) =>
+	isPlaying && activeSong?.title === song.title ? (
+		<FaPauseCircle size={35} className="text-gray-300" onClick={handlePause} />
+	) : (
+		<FaPlayCircle size={35} className="text-gray-300" onClick={handlePlay} />
+	);
 
 export default PlayPause;
