@@ -13,7 +13,7 @@ interface ControlProps {
 	isActive?: boolean;
 	repeat: boolean;
 	shuffle: boolean;
-	currentSongs: string;
+	currentSongs: any;
 	setRepeat: React.Dispatch<React.SetStateAction<boolean>>;
 	handlePlayPause: () => void;
 	handlePrevSong: () => void;
