@@ -25,15 +25,16 @@ const ArtistDetails = () => {
 	return (
 		<div className="flex flex-col">
 			{artistData?.data.map((artist, i) => (
-				<DetailsHeader artistId={artistId} artistData={artist} key={i} />
+				<>
+					<DetailsHeader artistId={artistId} artistData={artist} key={i} />
+					<RelatedSongs
+						data={artist.views['top-songs'].data}
+						artistId={artistId}
+						isPlaying={isPlaying}
+						activeSong={activeSong}
+					/>
+				</>
 			))}
-
-			<RelatedSongs
-				data={artistData?.data}
-				artistId={artistId}
-				isPlaying={isPlaying}
-				activeSong={activeSong}
-			/>
 		</div>
 	);
 };
