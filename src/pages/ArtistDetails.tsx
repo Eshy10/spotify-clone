@@ -32,6 +32,7 @@ const ArtistDetails = () => {
 						artistId={artistId}
 						isPlaying={isPlaying}
 						activeSong={activeSong}
+						key={i}
 					/>
 				</>
 			))}

@@ -4,11 +4,11 @@
 
 /* Active Navigation Link */
 .active {
-	@apply text-cyan-500;
+	@apply text-teal-400;
 }
 
 .active svg {
-	@apply text-cyan-500;
+	@apply text-teal-400;
 }
 
 .bar:nth-child(2) {
@@ -40,4 +40,8 @@
 .hide-scrollbar {
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
+}
+
+input[type='range'] {
+	filter: hue-rotate(240deg);
 }
