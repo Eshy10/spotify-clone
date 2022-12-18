@@ -20,7 +20,7 @@ const DetailsHeader = ({
 			<img
 				alt="profile"
 				src={
-					artistId !== ''
+					artistId !== undefined
 						? artistData?.attributes?.artwork?.url
 								.replace('{w}', '500')
 								.replace('{h}', '500')
@@ -31,16 +31,18 @@ const DetailsHeader = ({
 
 			<div className="ml-5">
 				<p className="font-bold sm:text-3xl text-xl text-white">
-					{artistId !== '' ? artistData?.attributes?.name : songData?.title}
+					{artistId !== undefined
+						? artistData?.attributes?.name
+						: songData?.title}
 				</p>
-				{artistId === '' && songData !== undefined && (
+				{artistId === undefined && songData !== undefined && (
 					<Link to={`/artists/${songData?.artists[0]?.adamid}`}>
 						<p className="text-base text-gray-400 mt-2">{songData?.subtitle}</p>
 					</Link>
 				)}
 
 				<p className="text-base text-gray-400 mt-2">
-					{artistId !== ''
+					{artistId !== undefined
 						? artistData?.attributes?.genreNames[0]
 						: songData?.genres?.primary}
 				</p>

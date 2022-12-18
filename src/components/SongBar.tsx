@@ -31,7 +31,7 @@ const SongBar = ({
 			<img
 				className="w-20 h-20 rounded-lg"
 				src={
-					artistId !== ''
+					artistId !== undefined
 						? song?.attributes?.artwork?.url
 								.replace('{w}', '125')
 								.replace('{h}', '125')
@@ -40,7 +40,7 @@ const SongBar = ({
 				alt={song?.title}
 			/>
 			<div className="flex-1 flex flex-col justify-center mx-3">
-				{artistId === '' ? (
+				{artistId === undefined ? (
 					<Link to={`/songs/${song.key as string}`}>
 						<p className="text-xl font-bold text-white">{song?.title}</p>
 					</Link>
@@ -50,11 +50,13 @@ const SongBar = ({
 					</p>
 				)}
 				<p className="text-base text-gray-300 mt-1">
-					{artistId !== '' ? song?.attributes?.albumName : song?.subtitle}
+					{artistId !== undefined
+						? song?.attributes?.albumName
+						: song?.subtitle}
 				</p>
 			</div>
 		</div>
-		{artistId === '' ? (
+		{artistId === undefined ? (
 			<PlayPause
 				isPlaying={isPlaying}
 				activeSong={activeSong}
