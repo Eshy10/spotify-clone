@@ -1,7 +1,8 @@
 # MBox
 Spotify Clone
 
-<img width="1440" alt="Screenshot 2022-12-18 at 17 56 25" src="https://user-images.githubusercontent.com/52670459/208311237-e47986d5-0541-4393-82f9-08f3820f38a8.png">
+<img width="1436" alt="mbox" src="https://user-images.githubusercontent.com/52670459/208468819-591f3386-f274-4123-8c4c-282e7b9ee987.png">
+
 
  ## Features
 - Top Charts
@@ -12,7 +13,7 @@ Spotify Clone
 
 
 ## Live Demo Link
-<a href= "https://musickbox.netlify.app/">Click here</a>
+<a href= "https://mbox05.netlify.app/">Click here</a>
 
 ## Built With
 
