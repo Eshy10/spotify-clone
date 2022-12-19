@@ -40,7 +40,11 @@ const TopChartCard = ({
 		<div className="flex-1 flex flex-row justify-between items-center">
 			<img
 				className="w-20 h-20 rounded-lg"
-				src={song?.images?.coverart}
+				src={
+					song?.images !== undefined
+						? song?.images?.coverart
+						: 'https://via.placeholder.com/400/000000/FFFFFF?Text=image'
+				}
 				alt={song?.title}
 			/>
 			<div className="flex-1 flex flex-col justify-center mx-3">

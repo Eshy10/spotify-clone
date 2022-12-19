@@ -45,7 +45,11 @@ const SongCard = ({ song, isPlaying, activeSong, data, i }: SongCardProps) => {
 				</div>
 				<img
 					alt="song_img"
-					src={song.images?.coverart}
+					src={
+						song?.images !== undefined
+							? song.images?.coverart
+							: 'https://via.placeholder.com/400/000000/FFFFFF?Text=image'
+					}
 					className="w-full h-full rounded-lg"
 				/>
 			</div>
